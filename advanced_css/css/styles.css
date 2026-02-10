@@ -171,3 +171,9 @@ footer {
     font-weight: bold;
     font-size: 0.9em;
 }
+
+.intro-text {
+    font-weight: bold;      /* Makes it bold */
+    font-size: 1.25rem;     /* Makes it slightly larger (scales responsively) */
+    color: #274259;         /* Keeps it consistent with your brand blue */
+}

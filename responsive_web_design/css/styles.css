@@ -1,0 +1,260 @@
+/* --- 1. GLOBAL STYLES & RESET --- */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't break widths */
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin-bottom: 25px; /* Adjust this number to increase/decrease space */
+    color: #1a2d3d;
+    line-height: 1.8;    /* Increases space between lines of text within a paragraph */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #274259;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+#container {
+    background-color: #A3B2BF;
+    width: 95%;          /* Flexible width for mobile */
+    max-width: 1100px;   /* Maximum width for desktop */
+    margin: 20px auto;
+    border: 4px solid #D9AF62;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #274259;
+    font-size: 2.5rem; /* Scales better than fixed pixels */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav {
+    border-top: 4px solid #D9AF62;
+    border-bottom: 4px solid #D9AF62;
+    padding-top: 15px;    /* Space between top line and links */
+    padding-bottom: 4px;  /* This moves the bottom line closer (Adjust this number!) */
+    margin-bottom: 20px;  /* Space between the line and the content below */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Stacked for Mobile */
+    gap: 10px;
+    align-items: center;
+}
+
+nav a {
+    display: block;
+    background-color: #274259;
+    color: #D9AF62;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100%; /* Full width links on mobile */
+}
+
+/* Navigation Button Requirement */
+nav a.nav-button {
+    background-color: #D9AF62;
+    color: #274259;
+    border: 2px solid #274259;
+}
+
+nav a:hover {
+    background-color: #D9AF62;
+    color: #274259;
+    border: 2px solid #274259;
+    outline: 3px solid #274259; 
+    outline-offset: 2px;  
+}
+
+/* --- 3. MAIN CONTENT --- */
+main {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+    padding: 40px;         /* This applies to all sides */
+    padding-bottom: 60px;  /* This adds extra space specifically at the bottom */
+    border-radius: 20px;
+    border: 4px solid #D9AF62;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacked for Mobile */
+    gap: 25px;
+}
+
+section, aside {
+    width: 100%;
+}
+
+aside {
+    background-color: #D9AF62;
+    padding: 20px;
+    border-radius: 15px;
+    color: #274259;
+    border: 2px solid #A69580;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+/* The "Yellow Box" Industry Recognition */
+.links {
+    text-align: center;
+    font-size: 18px;
+    background-color: #D9AF62;
+    width: 90%;
+    margin: 30px auto;
+    border: 4px dashed #A69580;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+/* --- 4. TABLET VIEW (768px and up) --- */
+@media screen and (min-width: 768px) {
+    header h1 { font-size: 3.5rem; }
+    
+    nav ul {
+        flex-direction: row; /* Side-by-side links */
+        justify-content: center;
+    }
+    
+    nav a { width: auto; }
+}
+
+/* --- 5. DESKTOP VIEW (1024px and up) --- */
+@media screen and (min-width: 1024px) {
+    .content-wrapper {
+        flex-direction: row; /* Content + Sidebar side-by-side */
+    }
+    
+    section { flex: 2; }
+    aside { flex: 1; }
+    
+    #container { padding: 30px; }
+}
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 4px solid #D9AF62;
+    color: #274259;
+    font-weight: bold;
+}
+
+header, nav, main, footer {
+    margin-bottom: 30px;
+}
+
+h3 {
+    margin-top: 25px;    /* This creates the gap you're looking for */
+    margin-bottom: 15px; /* This keeps a small gap between the header and the text below it */
+    color: #274259;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;   /* This centers the text horizontally */
+    color: #274259;       /* Your existing blue color */
+    margin-top: 20px;     /* Adds space above the header */
+    margin-bottom: 30px;  /* Adds space below the header before the content starts */
+    font-size: 2.2rem;    /* Makes it stand out as a main heading */
+    width: 100%;          /* Ensures it takes up the full width to center correctly */
+}
+
+.intro-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #274259;
+    
+    /* These two lines do the magic: */
+    display: block;      /* Forces the rest of the text to a new line */
+    margin-bottom: 10px; /* Adds a small gap before the next sentence starts */
+}
+
+/* Target the Contact Us button specifically */
+nav a.nav-button:hover {
+    background-color: #D9AF62; /* Keeps original background */
+    color: #274259;            /* Keeps original text color */
+    
+    /* This creates the "box around it" effect */
+    outline: 3px solid #274259; 
+    outline-offset: 2px;       /* This creates the gap between the button and the box */
+    
+    border-color: #274259;     /* Keeps the button's own border blue */
+}
+
+/* --- CONTACT FORM STYLING --- */
+.responsive-form input, 
+.responsive-form textarea {
+    width: 100%;
+    padding: 15px;            /* Adds "breathing room" inside the box */
+    margin-bottom: 20px;
+    border: 2px solid #274259; /* Brand blue border */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    font-family: inherit;      /* Uses your Segoe UI font */
+    font-size: 1rem;
+    color: #274259;
+    transition: all 0.3s ease; /* Smooth transition for the focus state */
+}
+
+/* This makes the box "glow" or change when the user clicks into it */
+.responsive-form input:focus, 
+.responsive-form textarea:focus {
+    outline: none;             /* Removes the default browser blue ring */
+    border-color: #D9AF62;     /* Changes border to gold when typing */
+    box-shadow: 0 0 8px rgba(217, 175, 98, 0.4); /* Subtle gold glow */
+    background-color: #fff;    /* Pure white background on focus */
+}
+
+/* Style the placeholder text (the "Name", "Email" hints) */
+::placeholder {
+    color: #5a768e;
+    opacity: 0.7;
+}
+
+.submit-btn {
+    background-color: #274259;
+    color: #D9AF62;
+    padding: 15px 30px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #D9AF62;
+    color: #274259;
+    outline: 3px solid #274259;
+    outline-offset: 4px; /* The "box around it" effect you wanted earlier */
+}
